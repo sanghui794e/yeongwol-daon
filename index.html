@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(주)영월다온환경 | 공공기관·학교 위생관리 & 냉난방기 종합세척 전문 여성기업</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --secondary: #059669;
+      --accent: #d97706;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Top Banner */
+    .top-bar {
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 12px;
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .top-bar-left span {
+      margin-right: 16px;
+    }
+
+    .top-badge {
+      background: var(--secondary);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    /* Header Nav */
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-symbol {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .logo-text h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text p {
+      font-size: 10px;
+      color: var(--gray);
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-size: 14.5px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-header {
+      background: var(--primary);
+      color: #fff;
+      padding: 9px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .btn-header:hover { background: var(--primary-dark); }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.88)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+      padding: 100px 24px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(2, 132, 199, 0.3);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      color: #38bdf8;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h2 {
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #cbd5e1;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .btn-hero-primary {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .btn-hero-primary:hover { background: #0284c7; transform: translateY(-2px); }
+
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .btn-hero-secondary:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-2px); }
+
+    /* Highlights Counter */
+    .highlights {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 30px 24px;
+    }
+
+    .highlights-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .hl-item h3 {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .hl-item p {
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 600;
+    }
+
+    /* Section Global */
+    section {
+      padding: 80px 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px auto;
+    }
+
+    .section-header .sub-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      font-size: 15px;
+      color: var(--gray);
+    }
+
+    /* Services Grid */
+    .services-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: all 0.3s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-color: var(--primary);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      background: #f0f9ff;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 13.5px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .service-list {
+      list-style: none;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 14px;
+    }
+
+    .service-list li {
+      font-size: 12.5px;
+      color: #475569;
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .service-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* Female Enterprise Privilege Box */
+    .privilege-section {
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .privilege-box {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: 16px;
+      padding: 44px;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .privilege-text h3 {
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #38bdf8;
+    }
+
+    .privilege-text p {
+      font-size: 14.5px;
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .law-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #7dd3fc;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .privilege-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .privilege-card .amount {
+      font-size: 38px;
+      font-weight: 900;
+      color: #fbbf24;
+      margin: 10px 0;
+    }
+
+    .privilege-card p {
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+
+    /* Purpose 7 Section */
+    .purpose-table-section {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .purpose-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+
+    .purpose-table th, .purpose-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .purpose-table th {
+      background: #f1f5f9;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .purpose-table td {
+      font-size: 13.5px;
+      color: #334155;
+    }
+
+    /* Contact & Form */
+    .contact-section {
+      background: #ffffff;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info h3 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: var(--dark);
+    }
+
+    .info-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: #475569;
+    }
+
+    .info-item strong {
+      color: var(--dark);
+      width: 80px;
+      flex-shrink: 0;
+    }
+
+    .estimate-form {
+      background: #f8fafc;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 13px;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: var(--primary-dark); }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 40px 24px;
+      font-size: 12.5px;
+      line-height: 1.8;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #1e293b;
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .privilege-box { grid-template-columns: 1fr; }
+      .contact-container { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span class="top-badge">여성기업 공식 파트너</span>
+      <span>강원특별자치도 영월군 영월읍 중앙로 50 (2층 202호)</span>
+      <span>TEL/FAX: 033-375-1156</span>
+      <span>직통: 010-6721-1156</span>
+      <span>문의: 010-2513-1157</span>
+      <span>E-mail: love4ekim@naver.com</span>
+    </div>
+    <div class="top-bar-right">
+      <span>지방계약법 의거 5,000만 원 이하 관공서 1인 수의계약 지원</span>
+    </div>
+  </div>
+
+  <!-- Header Nav -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo-box">
+        <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M48 6 C48 6, 16 38, 16 58 C16 78, 32 92, 50 92 C68 92, 84 78, 84 58 C84 38, 48 6, 48 6 Z" fill="url(#nav_grad_blue)" />
+          <path d="M58 28 C58 28, 84 46, 84 68 C84 84, 72 96, 56 96 C62 90, 66 80, 66 70 C66 52, 58 28, 58 28 Z" fill="url(#nav_grad_green)" />
+          <circle cx="38" cy="58" r="6" fill="#ffffff" opacity="0.85"/>
+          <defs>
+            <linearGradient id="nav_grad_blue" x1="16" y1="6" x2="84" y2="92" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38bdf8"/>
+              <stop offset="1" stop-color="#0284c7"/>
+            </linearGradient>
+            <linearGradient id="nav_grad_green" x1="56" y1="28" x2="84" y2="96" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#34d399"/>
+              <stop offset="1" stop-color="#059669"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="logo-text">
+          <h1>주식회사 영월다온환경</h1>
+          <p>YEONGWOL DAON ENVIRONMENT CO., LTD.</p>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">주요 사업 영역</a></li>
+        <li><a href="#privilege">수의계약 특례</a></li>
+        <li><a href="#purposes">등기 목적 7선</a></li>
+        <li><a href="#contact">견적 및 상담 문의</a></li>
+      </ul>
+      <a href="#contact" class="btn-header">1초 간편 견적문의</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">영월의 청정 자연을 지키는 친환경 종합 시설관리 솔루션</div>
+      <h2>
+        영월군 공공기관·학교 위생관리 &<br>
+        냉·난방기 종합세척 1등 파트너
+      </h2>
+      <p>
+        (주)영월다온환경은 건물위생관리, 시스템 에어컨 완전분해 살균세척, 감염병 예방 방역, 시설관리를 전문으로 하는 중소벤처기업부 인증 여성기업입니다.
+      </p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-hero-primary">4대 핵심 서비스 보기</a>
+        <a href="#contact" class="btn-hero-secondary">관공서 수의계약 상담신청</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Numbers -->
+  <div class="highlights">
+    <div class="highlights-grid">
+      <div class="hl-item">
+        <h3>5,000만원</h3>
+        <p>여성기업 수의계약 상한선</p>
+      </div>
+      <div class="hl-item">
+        <h3>100%</h3>
+        <p>친환경 공인 약품·인증 장비</p>
+      </div>
+      <div class="hl-item">
+        <h3>24시간</h3>
+        <p>영월 관내 신속 대응 시스템</p>
+      </div>
+      <div class="hl-item">
+        <h3>0건</h3>
+        <p>안전사고 무결점 운영</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 Major Services -->
+  <section id="services">
+    <div class="section-header">
+      <span class="sub-badge">CORE BUSINESS SERVICES</span>
+      <h2>(주)영월다온환경 핵심 4대 사업 영역</h2>
+      <p>등기부상 7대 공식 목적을 완벽히 구현하는 전문화된 위생·환경 케어 시스템입니다.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- 서비스 1 -->
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h3>냉·난방기 종합 세척업</h3>
+        <p>영월 관내 학교, 군청 청사, 병의원 시스템 에어컨, 스탠드형 냉난방기 100% 완전분해 친환경 고압 살균 세척.</p>
+        <ul class="service-list">
+          <li>필터, 송풍팬, 열교환기 완전분해</li>
+          <li>130도 고온 스팀 & 친환경 피톤치드 살균</li>
+          <li>전기세 절감 및 냉난방 효율 30% 개선</li>
+          <li>학교 방학 기간 맞춤형 대량 세척</li>
+        </ul>
+      </div>
+
+      <!-- 서비스 2 -->
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>건물위생관리 & 청소업</h3>
+        <p>공공청사, 도서관, 학교, 문화체육센터 등 공공시설의 바닥 수지 왁스 코팅, 대청소, 외벽 세척 토탈 클리닝.</p>
+        <ul class="service-list">
+          <li>전문 마루광택기 바닥 박리 & 고급 왁스 코팅</li>
+          <li>준공 청소, 계절별 정기 대청소</li>
+          <li>유리창, 외벽, 카펫 전문 세척</li>
+          <li>친환경 세제 사용 실내 공기질 보장</li>
+        </ul>
+      </div>
+
+      <!-- 서비스 3 -->
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <h3>소독업 및 방역업</h3>
+        <p>감염병예방법에 따른 법정 의무 소독 및 공공시설, 복지시설, 다중이용시설 맞춤형 살균·해충 방제 솔루션.</p>
+        <ul class="service-list">
+          <li>초미립자(ULV) 공간 살균 소독</li>
+          <li>보건소 정식 소독필증 즉시 발급</li>
+          <li>친환경 방역 약품으로 인체 무해</li>
+          <li>계절별 해충(바퀴, 모기, 쥐) 집중 방제</li>
+        </ul>
+      </div>
+
+      <!-- 서비스 4 -->
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>종합 시설관리 & 부대사업</h3>
+        <p>단순 청소를 넘어 공공청사 및 건물의 종합 시설 유지보수, 환경 관리, 위생 토탈 케어 서비스 제공.</p>
+        <ul class="service-list">
+          <li>공공기관 시설물 일상 환경 관리</li>
+          <li>저수조(물탱크) 청소 및 수질 관리</li>
+          <li>관공서 수의계약 맞춤형 용역 설계</li>
+          <li>정기 관리 계약 시 분기별 무상 점검</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Female Enterprise Privilege -->
+  <section id="privilege" class="privilege-section">
+    <div class="privilege-box">
+      <div class="privilege-text">
+        <span class="law-badge">지방계약법 시행령 제25조 제1항 제5호 라목</span>
+        <h3>관공서 계약관님을 위한 여성기업 수의계약 특례</h3>
+        <p>
+          (주)영월다온환경은 중소벤처기업부 인증 여성기업으로, 공공기관 및 학교 계약 담당관님께서 
+          <strong>추정가격 5,000만 원 이하의 용역을 복잡한 입찰 경쟁 없이 '단독 1인 견적'으로 신속하고 합법적으로 수의계약</strong> 체결하실 수 있습니다.
+        </p>
+        <div style="font-size: 13px; color: #94a3b8;">
+          • 계약 부서 감사 완벽 대비 (여성기업 확인서 및 직접생산확인서 완비)<br>
+          • 행정실 및 재무과 서류 일체 (견적서, 산출내역서, 계약서) 원스톱 지원
+        </div>
+      </div>
+      <div class="privilege-card">
+        <p>여성기업 수의계약 한도액</p>
+        <div class="amount">5,000만 원</div>
+        <p>일반 기업(2,000만 원) 대비 2.5배 혜택</p>
+        <div style="margin-top: 16px;">
+          <a href="#contact" class="btn-hero-primary" style="display:block; padding: 10px;">수의계약 전용 상담요청</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purpose 7 Full Table -->
+  <section id="purposes">
+    <div class="section-header">
+      <span class="sub-badge">CERTIFIED LEGAL PURPOSES</span>
+      <h2>법인 정관 및 등기부상 공식 사업 목적 7선</h2>
+      <p>대한민국 법원 영월등기소에 정식 등재된 공식 사업 목적입니다.</p>
+    </div>
+
+    <div class="purpose-table-section">
+      <table class="purpose-table">
+        <thead>
+          <tr>
+            <th style="width: 15%;">목적 번호</th>
+            <th style="width: 35%;">공식 등기 목적명</th>
+            <th style="width: 50%;">주요 수행 사업 및 관공서 연계 내용</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700; color:var(--primary);">목적 제1호</td>
+            <td style="font-weight:700;">냉, 난방기 종합 세척업</td>
+            <td>시스템 에어컨, 스탠드 냉온풍기, 필터 완전분해 및 살균 세척 용역</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--primary);">목적 제2호</td>
+            <td style="font-weight:700;">건물위생관리업</td>
+            <td>공공청사, 학교, 복지시설 바닥 왁스코팅, 계단·복도·화장실 전문 위생관리</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--primary);">목적 제3호</td>
+            <td style="font-weight:700;">시설관리업</td>
+            <td>건물 및 공공시설물의 종합 환경 유지보수 및 위생 토탈 관리 용역</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--primary);">목적 제4호</td>
+            <td style="font-weight:700;">청소업 및 청소대행업</td>
+            <td>준공 청소, 외벽 청소, 이사 입주 청소 및 관공서 정기 청소 대행</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--primary);">목적 제5호</td>
+            <td style="font-weight:700;">소독업 및 방역업</td>
+            <td>감염병 예방법에 따른 법정 의무 소독 및 해충 방제, 소독필증 발행</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--primary);">목적 제6호</td>
+            <td style="font-weight:700;">서비스업</td>
+            <td>기타 환경·위생 개선을 위한 맞춤형 컨설팅 및 케어 서비스</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--primary);">목적 제7호</td>
+            <td style="font-weight:700;">각 호에 관련된 부대사업 일체</td>
+            <td>위 사업 목적을 원활히 수행하기 위한 종합 부대 용역 및 자재 공급</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Contact & Estimate -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>관공서 및 기업 고객 견적 문의</h3>
+        <p style="color:var(--gray); margin-bottom: 24px; font-size:14px;">
+          영월 관내 학교 행정실, 군청 재무과, 공공청사 시설관리 담당자님의 현장 실측 및 맞춤 견적 문의를 언제든 환영합니다.
+        </p>
+        
+        <div class="info-item">
+          <strong>본사 주소</strong>
+          <span>강원특별자치도 영월군 영월읍 중앙로 50 (2층 202호)</span>
+        </div>
+        <div class="info-item">
+          <strong>전화 / 팩스 (TEL / FAX)</strong>
+          <span>033-375-1156 (겸용)</span>
+        </div>
+        <div class="info-item">
+          <strong>핸드폰 (직통 / 상담)</strong>
+          <span>010-6721-1156 (대표직통) &nbsp;|&nbsp; 010-2513-1157 (상담/문의)</span>
+        </div>
+        <div class="info-item">
+          <strong>전자우편 (E-mail)</strong>
+          <span>love4ekim@naver.com</span>
+        </div>
+        <div class="info-item">
+          <strong>기업 구분</strong>
+          <span style="color:var(--secondary); font-weight:700;">중소벤처기업부 인증 여성기업 (5,000만원 수의계약)</span>
+        </div>
+        <div class="info-item">
+          <strong>서비스 지역</strong>
+          <span>영월군 전역 (영월읍, 상동읍, 산솔면, 김삿갓면, 북면, 남면, 한반도면, 주천면, 무릉도원면)</span>
+        </div>
+      </div>
+
+      <!-- 견적 폼 -->
+      <div class="estimate-form">
+        <h4 style="font-size:16px; font-weight:800; margin-bottom:14px; color:var(--dark);">실시간 간편 견적 요청서</h4>
+        <div class="form-group">
+          <label>기관명 / 상호명</label>
+          <input type="text" placeholder="예: 영월초등학교 행정실, 영월군청">
+        </div>
+        <div class="form-group">
+          <label>담당자 성함 및 연락처</label>
+          <input type="text" placeholder="예: 김담당 / 010-0000-0000">
+        </div>
+        <div class="form-group">
+          <label>필요 서비스 분야</label>
+          <select>
+            <option>냉·난방기(에어컨) 종합 분해 살균 세척</option>
+            <option>건물위생관리 (바닥 왁스 코팅, 대청소)</option>
+            <option>법정 의무 소독 및 방역 용역</option>
+            <option>종합 시설관리 및 정기 청소 대행</option>
+            <option>복합 견적 (수의계약 패키지 상담)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>세부 요청 사항</label>
+          <textarea rows="3" placeholder="예: 에어컨 30대 세척 견적서 및 지명원 요청합니다."></textarea>
+        </div>
+        <button type="button" class="btn-submit" onclick="alert('견적 요청이 접수되었습니다! 담당자가 신속히 연락드리겠습니다.')">
+          공식 견적서 요청하기
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 8px;">주식회사 영월다온환경</div>
+      <p>
+        본사: 강원특별자치도 영월군 영월읍 중앙로 50, 2층 202호 | 상호: 주식회사 영월다온환경<br>
+        TEL / FAX: 033-375-1156 | H.P: 010-6721-1156, 010-2513-1157 | E-mail: love4ekim@naver.com<br>
+        사업자구분: 공공기관 수의계약 여성기업 | 주요업무: 냉난방기 종합세척, 건물위생관리, 소독방역, 시설관리
+      </p>
+    </div>
+    <div class="footer-container">
+      <div>© 2026 주식회사 영월다온환경. All Rights Reserved.</div>
+      <div>Designed for Yeongwol Public Institutions & Schools</div>
+    </div>
+  </footer>
+
+</body>
+</html>
